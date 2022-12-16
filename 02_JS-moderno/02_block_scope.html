@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>escop</title>
+</head>
+<body>
+    <script>
+        /*
+        {
+            var nome = 'mah'//var dentro do escopo sendo var ela ainda eh global
+        }
+        console.log(nome)//var dentro do escopo posso puxar ela pra fora
+        document.write(nome)// var mesmo que dentro do escopo chama
+        {
+            let nome2 = 'dah'//let dentro do escopo
+        }
+        console.log(nome2)//let dentro do escopo, não consigo puxar pra fora let se torna uma var local
+        document.write(nome2)//let não da pra chamar no global let se torna uma var local
+        */
+
+        {
+            function teste(){
+                console.log('oieeeeee')     
+            }     //uma function sendo chamada normalmente apesar de dentro do escopo funciona normal
+        }
+        teste()
+        {
+            let teste2 = function(){
+                console.log('ola de novo')
+            }//declara ela como let e ela sera uma function local
+        teste2()
+        }
+        teste2()
+        
+
+    </script>
+
+</body>
+</html>

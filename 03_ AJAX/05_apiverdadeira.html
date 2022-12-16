@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de verdade</title>
+</head>
+<body>
+
+    <div class="container">
+
+
+    </div>
+
+    <script>
+        /*requisição fetch que fizemos da lista de filmes no metodo GET que me retornou uma lista completa que foi armazenda dentro do json, depois fizemos um map dentro dos resultados, e colocamos dentro do nosso container, uma div criada onde colocamos todos os resultados de forma dinamica criando a div tituloFilme e dentro dela colocamos a div description que esta oculta e com um click à exibimos.
+          */
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=506fadb0256c13349acc05dabebf9604&language=en-US&page=1',{
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(function(json){
+                var container = document.querySelector('.container')
+                
+                //console.log(json)
+                json.results.map(function(val){
+                    container.innerHTML+=`
+                    
+                        <div style="cursor:pointer" class="tituloFilme">`+val.title+`
+                        <div style="display:none;" class="description">`+val.overview+`</div>
+                        <hr>                     
+                                        
+                    </div>`
+                })
+
+                var titulos = document.querySelectorAll('.tituloFilme')
+                for(var i = 0; i < titulos.length; i++){
+                    titulos[i].addEventListener('click',function(t){
+                        if(t.target.querySelector('.description').style.display == "none"){
+                            t.target.querySelector('.description').style.display = "block"
+                        }else{
+                            t.target.querySelector('.description').style.display = "none"
+                        }//o for é um evento de loop
+                    })
+                }
+
+
+
+            })
+    </script>
+</body>
+</html>

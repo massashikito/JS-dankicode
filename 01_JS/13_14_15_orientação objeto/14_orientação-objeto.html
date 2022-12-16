@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mais orientação objeto</title>
+</head>
+<body>
+    <script>
+        function Animal(nome,peso){
+            if(nome == undefined){
+                nome = 'Cachorro';
+            }
+            if(peso == undefined){
+                peso = '5kg';
+            }
+            this.nome = nome;
+            this.peso = peso;
+        }
+
+        animal = new Animal(/*"Cachorro",'12kg'*/);//comentei para dar undefined e aconteceu o if dentro do objeto
+
+        animal2 = new Animal("Gato", '6kg');
+
+        alert(animal2.nome);//troque animal e animal2
+
+        alert(animal2.peso)
+
+    </script>
+</body>
+</html>

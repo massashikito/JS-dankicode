@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            
+            .conteudo h2 span{
+                font-size: 15px;
+                cursor: pointer;/*comando para virar um botão*/   
+            }
+
+            .conteudo p{
+                overflow: hidden;/*para ocultar o texto*/
+                height: 0px;/*valor que eu quero ocultar no caso aqui inteiro*/
+                transition: 1s;/*tempo para abrir o texto oculto*/
+            }
+
+            .mostrar{
+                height: 200px !important;/*aqui o tamanho a ser mostrado, e o important é pra carregar a função*/
+                
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="conteudo">
+            <h2>Clique em <span>Ver mais</span> para ver a magica</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima alias voluptatem voluptatum iusto accusantium mollitia necessitatibus nobis tempora quo dolores est ducimus consectetur consequuntur perspiciatis ea facilis nostrum, voluptates consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eaque dolore velit consectetur soluta odio quis aperiam. Perspiciatis necessitatibus nam magnam mollitia, omnis voluptates eaque officiis eveniet tenetur sapiente voluptatibus!</p>
+        </div>
+        <script>
+            var span = document.querySelector('.conteudo span')
+
+            span.addEventListener('click',function(){
+                var conteudo = document.querySelector('.conteudo p')
+
+                if(conteudo.classList.contains('mostrar')){
+                    span.innerHTML = 'ver mais!'
+                    conteudo.classList.remove('mostrar')
+                }else{
+                    span.innerHTML = 'Ocultar'
+                    conteudo.classList.add('mostrar')        
+                }
+            });//Aqui executamos o comando de mostrar e esconder o conteudo. top de mais.
+        </script>
+    </body>
+</html>

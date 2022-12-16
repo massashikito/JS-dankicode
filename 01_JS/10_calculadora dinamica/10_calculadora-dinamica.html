@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora dinamica</title>
+</head>
+<body>
+    <script>
+        //Aplicação calculadora dinâmica.
+
+        //Queremos um número inicial
+        //Queremos um sinal (tipo de operação)
+        //Quero um número final
+
+        var numeroInicial = prompt('informe o primeiro numero...');//var do 1º numero
+
+        var sinal = prompt('informe o sinal da sua operação...')//var do sinalç
+
+        while(sinal != '-' && sinal != '+' && sinal != '/' && sinal != '*'){
+            alert('Por favor informe um sinal valido!');
+            sinal = prompt('informe o sinal da sua operação...');
+        }//parametro para só entrar as 4 operações basicas
+
+        var numeroFinal = prompt('informe o numero final...');//var do 2º numero
+        
+        numeroInicial = parseInt(numeroInicial);//parseInt propriedade para se transformar uma string em um numero
+        numeroFinal = parseInt(numeroFinal);//parseInt propriedade para se transformar uma string em um numero
+
+        var resultadoFinal = 0;//var que recebera as operações
+
+        if(sinal == '+'){
+            resultadoFinal = numeroInicial + numeroFinal;
+        }else if(sinal == '-'){
+            resultadoFinal = numeroInicial - numeroFinal;
+        }else if(sinal == '*'){
+            resultadoFinal = numeroInicial * numeroFinal;
+        }else if(sinal == '/'){
+            resultadoFinal = numeroInicial / numeroFinal;
+        }//Esquema das operações ISSO FOI FODA DE MAIS
+
+        alert('O resultado final é ' + resultadoFinal);//MOSTRAR O RESULTADO FINAL NA TELA SRAS E SRS REBENTAMU!!!
+    </script>
+</body>
+</html>

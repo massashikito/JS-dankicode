@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        function testes(){
+            console.log('chamando a função testes');
+        }//criei minha 1ª function
+
+        function testes2(nome, idade){
+            console.log('O nome passado é:', nome)
+            console.log('A idade é:', idade)
+            console.log('_______________________')
+        }//nessa 2ª function existem 2 var nela
+
+        function testes3(numero){
+            console.log('o numero é:', numero)
+        }//nessa 3ª function tem 1 var
+
+
+        testes()//chamei a 1º função
+        testes2('Guilherme', 30);//chamei a 2ª functin e ela preencheu as var com oq tem dentro dos parenteses
+        testes2('João', 27);//aqui acontece u a mesma coisa 
+        testes3(29);//aqui chamei a 3ª var e foi preenchido a var numero com o valor 29 que esta dentro do parenteses 
+        
+
+   
+        
+        
+        
+        
+        function pegarNome(parametro){
+            if(parametro <= 3){
+                return 'Guilherme';
+            }else if(parametro <= 5 ){
+                return 'Massashi';
+            }else if(parametro <= 10){
+                return 'Damaris';
+            }else{
+                return 'nada'
+            }
+        }
+        
+    
+        var nome = pegarNome(7);//chamei a function pegarNome e joguei ela dentro da variavel nome(e ja coloqiuei o 7 correspondendo ao if)
+        console.log(nome);//esta me mostrando Damaris pois o numero 7 corresponde ao else if dentro da function (resumindo, se dentro dos parenteses eu mudar o numero ele vai me retornar dependendo de como montei os parametros.
+    
+        (function(){
+            alert('Ola mundo!')
+        }) ()//foi criada uma function dentro de parenteses e em seguida chamei essa function com parenteses.
+
+    
+    </script>
+</body>
+</html>

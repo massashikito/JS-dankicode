@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando idade</title>
+</head>
+<body>
+    <script>
+        var anoNascimento = prompt("Por favor informe o ano do seu nascimento:");
+
+        while(anoNascimento >= 2022){
+            alert("Por favor informe seu ano de nascimento corretamente!");
+            anoNascimento = prompt("Por favor informe o ano do seu nascimento:");
+        }//aqui criamos um loop infinito até o usuario colocar informações dentro dos parametros solicitados.
+        
+
+        var anoAtual = prompt("Em qual ano estamos hoje?");
+    
+        var idadeFinal = anoAtual - anoNascimento;//aqui minha equação
+        
+        alert('Sua idade é '+ idadeFinal+ ' anos');//no alert precisei usar o + para chamar a var
+        console.log("a idade é", idadeFinal);//no console funciona com , e +
+
+    </script>
+
+</body>
+</html>

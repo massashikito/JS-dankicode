@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <script>         
+            //var = variavel global
+            //let = variavedl no escopo, OU SEJA, DENTRO DAS {}
+            //const = constante (não muda nunca)
+
+            //variaveis string sempre com "" OU ''
+            //variaveis numericas nao precisam dos "" OU ''
+            var nome = "Massashi";//criei a var Massashi
+        
+            nome = "joao"; //troquei para joão
+
+            nome = "lucas";//troquei para lucas, enfim posso ir alterando a variavel a qualquer momento.
+    
+            let mes = 2
+            mes = 5
+            console.log(mes)
+            
+            console.log(nome);//mostrando minha var no console.
+            
+            /*escopo*/ {
+                let idade = 27;//declarei idade como let
+                console.log(idade);//pra mostrar o let só funciona se estiver dentro do escopo 
+                console.log(nome, idade)//aqui mesma cituação
+            }//tudo que estiver aqui dentro é dentro do escopo
+
+            //NÃO CONSIGO PUXAR VARIAVEIS DE DENTRO DO ESCOPO PARA O ESCOPO GLOBAL, MAS, O COMTRARIO EU CONSIGO.
+             
+            
+            /*escopo juntando variaveis*/{
+            var numero = 27; //declarei um mumero
+            var nome = "Massashi";//declarei uma string
+            var nome2 = 'Damaris';//string tbm
+
+            var outravariavel = true;//falso é uma variavel boleana
+
+            console.log("o nome do cara é", nome, "ele tem", numero, "de idade")//exemplo de junção de variavel com texto usando virgula
+
+            console.log("o nome do cara é "+nome+ " ele tem "+numero+ " de idade")//exemplo de junção de variavel com texto usando + percebi que USAR A "," FICA MAIS FACIL ACERTAR O CODIGO.
+
+            var texto = "O nome do cara é"
+
+            console.log(texto, nome,"ELE É CASADO COM A", nome2)//usando 3 variaveis
+            
+            }
+
+
+        </script>
+    </body>
+</html>

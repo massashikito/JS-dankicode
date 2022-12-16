@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mais ainda sobre orientação objeto</title>
+</head>
+<body>
+    <script>
+        function Pessoa(){
+            this.nome = "Guilherme";
+            this.idade = 27;
+            this.printNome = function(numero){
+                alert(numero);
+            };//Esse aqui é o objeto     
+            this.returnAnimal = function(animal){
+                return animal;
+            }
+        }
+
+        function Animal(){
+            this.nome = "cachorro";
+            this.raca = "Bulldog";
+        }
+
+       var pessoa = new Pessoa();
+       
+       var animal = new Animal();
+
+       animal.raca = "Maltes";//Alterei a variavel
+
+        alert(pessoa.returnAnimal(animal).raca);
+
+
+
+
+
+    </script>  
+</body>
+</html>

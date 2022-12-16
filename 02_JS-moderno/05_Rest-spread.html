@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Spread</title>
+</head>
+<body>
+    <script>
+        //Spread
+        var nomes = [
+            {
+                nome:'joão'
+            },
+            {
+                nome: 'Felipe'
+            }
+        ]//todas as var que eu criar aqui dentro vai add no objeto
+
+        const objetos = [...nomes,{//...nomes add todos os nomes ali de cima aqui
+            nome:'Guilherme'
+        }]//aqui usei o spread para add as var criadas no começo
+        console.log(objetos[1])//selecionei o 2º nome :Felipe se apagar as chaves me dará todos as var criadas
+        
+
+        //Rest
+        let testes = (...nomes)=>{
+            console.log(nomes)//aqui tbm selecionei o nome que eu quis
+        }
+        testes('dah','neno',3,4,5,6,'massashi')//cria uma sequencia infinita de array
+
+
+
+        
+        let testes2 = (...numero)=>{
+            console.log(numero[0][2])
+        }
+        testes2([1,2,'casa',4,'abelha'])//cria uma sequencia infinita de array
+    </script>
+</body>
+</html>

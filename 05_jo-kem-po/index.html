@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jo-kem-po</title>
+    <style>
+        h1{
+            font-size: 3em;
+            color: greenyellow;
+            background-color: black;
+            text-align: center;
+            border-radius: 10px;
+            padding: 30px;           
+            margin: 10px;
+        }
+        h2{
+            font-size: 3em;
+            text-align: center;
+            margin: 10px;
+            
+        }
+        .player-options img,
+        .enemy-options img{
+            max-width: 130px;
+            opacity: 0.3;
+            cursor: pointer;
+        }
+        .player-options,.enemy-options{
+            width: 50%;
+        }
+        .align{
+            text-align: center;
+            display: flex;
+        }
+        .align .player-options h3{
+            padding: 10px;
+            color: white;
+            background-color: blue;
+            font-size: 2em;
+            margin: 10px;
+
+        }
+        .align .enemy-options h3{
+            padding: 10px;
+            color: white;
+            background-color: red;
+            font-size: 2em;
+            margin: 10px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Pedra, papel ou tesoura!</h1>
+    <h2 class="vencedor"></h2>
+    <hr>
+
+    <div class="align">
+        <div class="player-options">
+            <h3>você</h3>
+            <div><img opt="pedra" src="rock.png"></div>
+            <div><img opt="papel" src="paper.png"></div>
+            <div><img opt="tesoura" src="scisor.png"></div>
+        </div>
+        <div class="enemy-options">
+            <h3>computador</h3>
+            <div><img opt="pedra" src="rock.png"></div>
+            <div><img opt="papel" src="paper.png"></div>
+            <div><img opt="tesoura" src="scisor.png"></div>
+        </div>
+    </div>
+    <script>
+        var elementos = document.querySelectorAll('.player-options div > img')
+        var playerOpt = ""
+        var inimigoOpt = ""
+
+        function validarVitoria(){
+            
+            let vencedor = document.querySelector('.vencedor')
+
+            if(playerOpt == "papel"){
+
+                if(inimigoOpt == "papel"){
+                    //empate
+                    vencedor.innerHTML = "Xiii Empatou!"
+                }else if(inimigoOpt == "tesoura"){
+                    //inimigo ganhou
+                    vencedor.innerHTML = "O PC ganhou, seu noob."
+                }else if(inimigoOpt == "pedra"){
+                    //player ganhou
+                    vencedor.innerHTML = "Uhull VC VENCEU!!!"
+
+                }
+
+
+            }
+
+            if(playerOpt == "pedra"){
+
+                if(inimigoOpt == "pedra"){
+                    //empate
+                    vencedor.innerHTML = "Xiii Empatou!"
+                }else if(inimigoOpt == "papel"){
+                    //inimigo ganhou
+                    vencedor.innerHTML = "O PC ganhou, seu noob."
+                }else if(inimigoOpt == "tesoura"){
+                    //player ganhou
+                    vencedor.innerHTML = "Uhull VC VENCEU!!!"
+
+                }
+
+
+            }
+
+                if(playerOpt == "tesoura"){
+
+                    if(inimigoOpt == "tesoura"){
+                        //empate
+                        vencedor.innerHTML = "Xiii Empatou"
+                    }else if(inimigoOpt == "pedra"){
+                        //inimigo ganhou
+                        vencedor.innerHTML = "O PC ganhou, seu noob."
+                    }else if(inimigoOpt == "papel"){
+                        //player ganhou
+                        vencedor.innerHTML = "Uhull VC VENCEU!!!"
+
+                    }
+
+
+        }
+
+        }
+        
+        
+        function resetInimigo(){
+            const enemyOptions = document.querySelectorAll('.enemy-options div')
+            for(var i = 0; i <enemyOptions.length; i++){
+                
+            enemyOptions[i].childNodes[0].style.opacity = 0.3
+                
+            }
+
+        }
+
+        function inimigoJogar(){
+            let rand = Math.floor(Math.random()*3)
+
+            const enemyOptions = document.querySelectorAll('.enemy-options div')
+            resetInimigo()
+            for(var i = 0; i <enemyOptions.length; i++){
+                if(i == rand){
+                    enemyOptions[i].childNodes[0].style.opacity = 1
+                    inimigoOpt = enemyOptions[i].childNodes[0].getAttribute('opt')
+                }
+            }
+
+
+            validarVitoria()
+
+           // alert(playerOpt)
+           // alert(inimigoOpt)
+
+        }
+
+        function resetOpacityPlayer(){
+            for(var i = 0; i < elementos.length; i++){
+                elementos[i].style.opacity = 0.3;
+            }    
+        }
+
+        for(var i = 0; i < elementos.length; i++){
+            elementos[i].addEventListener('click',function(t){
+                resetOpacityPlayer();
+                t.target.style.opacity = 1;
+                playerOpt = t.target.getAttribute('opt');
+
+                inimigoJogar()
+
+                /*alert(playerOpt);*/
+            })
+        }
+
+    </script>
+</body>
+</html>

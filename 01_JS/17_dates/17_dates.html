@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com datas</title>
+</head>
+<body>
+    <script>
+       // var date = new Date();
+       // alert(date.getDate());//dia do mes atual
+       // alert(date.getDay());//dia da semana atual
+       // alert(date.getFullYear());//ano atual
+       // alert(date.getHours());
+        //w3schools.com site para parametros de datas
+
+        var date = new Date('11/05/2020');
+
+        var date2 = new Date('11/10/2020');
+
+        var diferenca = date2.getTime() - date.getTime()
+        alert(diferenca)//aqui obtemos a diferença entre as datas em milisegundos
+
+        var diferenca = (date2.getTime() - date.getTime()) / (1000 * 3600 * 24); //essa conta aqui ja transforma os milisegundos em dias 
+        alert(diferenca);
+
+    </script>
+</body>
+</html>

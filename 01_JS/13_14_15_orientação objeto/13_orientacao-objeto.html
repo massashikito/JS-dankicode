@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mais sobre orientação objeto</title>
+</head>
+<body>
+    <script>
+        function Pessoa(){
+            this.nome = "Guilherme";
+            this.idade = 27;
+            this.printNome = function(numero){
+                alert(numero);
+            }//Esse aqui é o objeto     
+        }
+
+        
+
+        var pessoa = new Pessoa();//aqui criei uma var e coloquei o objeto dentro dessa var
+        var pessoa_2 = new Pessoa();//aqui a mesma coisa da linha de cima
+
+        pessoa_2.nome = "joão";
+        
+
+        pessoa.printNome(pessoa_2.nome);
+
+
+
+
+
+    </script>  
+</body>
+</html>
