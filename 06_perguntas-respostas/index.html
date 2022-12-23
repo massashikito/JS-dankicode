@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas e respostas</title>
+</head>
+<body>
+    <div class="title">
+        <h1>Quem o pai mais ama?</h1>
+    </div>
+
+    <form class="pergunta" action="">
+        <div class="resposta">
+            <span>Dah</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+        </div>
+        <div class="resposta">
+            <span>Neno</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+        </div>
+        <div class="resposta">
+            <span>As duas estão corretas</span>
+            <input type="radio" name="pergunta1" value="correta">
+            <br>
+        </div>
+    </form>
+    <div class="title">
+        <h1>Quanto é 5 + 5?</h1>
+    </div>
+
+    <form class="pergunta" action="">
+        <div class="resposta">
+            <span>10</span>
+            <input type="radio" name="pergunta1" value="correta">
+            <br>
+        </div>
+        <div class="resposta">
+            <span>12</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+        </div>
+        <div class="resposta">
+            <span>N.D.A.</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+        </div>
+    </form>
+    <div class="title">
+        <h1>Oque o pai mais gosta de fazer?</h1>
+    </div>
+
+    <form class="pergunta" action="">
+        <div class="resposta">
+            <span>Trabalhar</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+        </div>
+        <div class="resposta">
+            <span>Estudar</span>
+            <input type="radio" name="pergunta1" value="incorreta">
+            <br>
+        </div>
+        <div class="resposta">
+            <span>Nenhuma dessas acima</span>
+            <input type="radio" name="pergunta1" value="correta">
+            <br>
+        </div>
+    </form>
+    
+
+    <script>
+        var elementos = document.querySelectorAll('[type=radio]')
+
+        for(var i = 0; i < elementos.length; i++){
+            elementos[i].addEventListener('change',function(e){
+                let marcado = e.target.value
+                if(marcado == "correta"){
+                   
+                    let parentNode = e.target.parentNode
+                    parentNode.style.backgroundColor = 'green'
+
+                    let els = parentNode.parentNode.querySelectorAll('[type=radio]')
+
+                    for(var n = 0; n < els.length; n++){
+                        els[n].disabled = true
+                    }
+
+                }else if(marcado == "incorreta"){
+                    
+                    let parentNode = e.target.parentNode
+                    parentNode.style.backgroundColor = 'red'
+
+                    let els = parentNode.parentNode.querySelectorAll('[type=radio]')
+
+                    for(var n = 0; n < els.length; n++){
+                        els[n].disabled = true
+                    }
+                    
+                    let correta = parentNode.parentNode.querySelector('[value=correta]')
+                    correta.parentNode.style.backgroundColor = 'green'
+                }
+
+                })
+        }
+    </script>
+</body>
+</html>
